@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"r
 alias vim="nvim"
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
