@@ -21,3 +21,15 @@ stow nvim
 stow zsh
 ```
 
+
+# LaTeX
+- Install with
+`sudo apt install texlive texlive-science texlive-pictures`
+- Compile with 
+`pdflatex <file>.tex`
+
+### Install packages
+- Download package from CTAN and unzip
+- `tex <package>.dtx` or `tex <package>.in`
+- `mv <folder> /usr/share/texlive/texmf-dist/tex/latex`
+- `sudo texhash`
