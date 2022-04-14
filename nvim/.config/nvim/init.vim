@@ -18,6 +18,7 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end() " Plugins aktivieren
 
 " Automatisch fehlende Plugins installieren
@@ -76,3 +77,10 @@ vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 imap jk <Esc>
 map <C-n> :NERDTreeToggle<CR>
+
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)

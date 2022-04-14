@@ -33,3 +33,28 @@ stow zsh
 - `tex <package>.dtx` or `tex <package>.in`
 - `mv <folder> /usr/share/texlive/texmf-dist/tex/latex`
 - `sudo texhash`
+
+
+### Misc
+- # ccls
+
+```
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo bash -\nsudo apt-get install -y nodejs
+sudo snap install ccls --classic
+```
+
+.ccls file at project root
+Example: .ccls from Computergrafik
+```
+clang
+
+%h -x
+%h c++-header
+-I
+.
+-I
+./include
+-O0 
+-g3  
+-std=c++11
+```
