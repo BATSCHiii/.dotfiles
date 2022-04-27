@@ -19,6 +19,7 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'kocha/vim-systemc'
 call plug#end() " Plugins aktivieren
 
 " Automatisch fehlende Plugins installieren
