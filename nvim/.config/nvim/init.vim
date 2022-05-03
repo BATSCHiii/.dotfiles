@@ -1,23 +1,16 @@
-" ### Plugins
-
-
 call plug#begin()
-  Plug 'morhetz/gruvbox'              " Farbschema Alternative
-  Plug 'junegunn/limelight.vim'       " Fokus auf aktuellen Absatz
-  Plug 'junegunn/goyo.vim'            " Alles ausblenden
-  Plug '9mm/vim-closer'               " Intelligente Klammern und co.
-  Plug 'preservim/nerdtree'           " Erweiterter Filebrowser
-  Plug 'liuchengxu/vista.vim'         " Functions, Variablen anzeigen
+  Plug 'morhetz/gruvbox'        
+  Plug '9mm/vim-closer'             
+  Plug 'preservim/nerdtree'     
   Plug 'reewr/vim-monokai-phoenix'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'kocha/vim-systemc'
-call plug#end() " Plugins aktivieren
+call plug#end() 
 
 
-" ### Darstellungsoptionen
 syntax on           
 set number          
 set relativenumber  
@@ -36,13 +29,11 @@ set nohlsearch
 set cc=80
 colorscheme gruvbox
 
-" ##  Optik und Farben
 if has('termguicolors')
-    set termguicolors     " Wenn Farben nicht passen, dann die Zeile auskommentieren (z.B. macOS Terminal)
+    set termguicolors   
 endif
 
 
-" ### Suche
 set path+=**      " Damit kann mit :find alles, auch in Subfolder gefunden werden
 set ignorecase    " Suche nicht Case-Sensentiv
 set smartcase     " Aber wenn Gro√übuchstaben verwenden werden dann schon
@@ -52,9 +43,9 @@ set helplang=de             " Deutsche Hilfe
 set spelllang=de_de,en_us   " Deutsche und englische Rechtschreibung
 
 
-set tabstop=4 softtabstop=4	shiftwidth=4    " Nur zwei Tab-Stopp einf√ºgen
-set expandtab           " Tabs in Spaces wandeln
-set formatoptions+=j    " Immer Spaces anstatt Tabs
+set tabstop=4 softtabstop=4	shiftwidth=4    
+set expandtab           
+set formatoptions+=j    
 
 lua require('namespace/telescope')
 
