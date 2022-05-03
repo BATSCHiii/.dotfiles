@@ -1,11 +1,5 @@
 " ### Plugins
 
-" Installation Pluginmanager
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 call plug#begin()
   Plug 'morhetz/gruvbox'              " Farbschema Alternative
@@ -22,28 +16,24 @@ call plug#begin()
   Plug 'kocha/vim-systemc'
 call plug#end() " Plugins aktivieren
 
-" Automatisch fehlende Plugins installieren
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
 
 " ### Darstellungsoptionen
-syntax on           " Syntax Highlighting aktiveren
-set number          " Line Numbers anzeigen
-set relativenumber  " Relative Nummerierung anzeigen
-set linebreak       " Ganze W√∂rter in neue Zeile umbrechen
-set showmode        " Aktuellen Modus in Statuszeile anzeigen
-set scrolloff=5     " Cursor bei Scroll weiter oben halten
-set mouse=a         " Scrollen mit der Mouse in Console und tmux
-set lazyredraw      " Weniger Redraws bei Macros und co.
-set cursorline      " Aktive Zeile markieren
-set updatetime=300  " Schellere Darstellung	/ Refresh
-set laststatus=2    " Statuszeile immer anzeigen
-set cmdheight=2     " Mehr Platz f√ºr Statusmeldungen
-set shortmess+=c    " Don't pass messages to |ins-completion-menu|
-set nowrap          " Wrap standardm√§√üig abschalten. Mit Leader w an-/abschalten
+syntax on           
+set number          
+set relativenumber  
+set linebreak       
+set showmode       
+set scrolloff=5    
+set mouse=a        
+set lazyredraw     
+set cursorline     
+set updatetime=300 
+set laststatus=2 
+set cmdheight=2
+set shortmess+=c    
+set nowrap     
 set nohlsearch
+set cc=80
 colorscheme gruvbox
 
 " ##  Optik und Farben
@@ -58,7 +48,6 @@ set ignorecase    " Suche nicht Case-Sensentiv
 set smartcase     " Aber wenn Gro√übuchstaben verwenden werden dann schon
 
 
-" ### Sprache und Rechtschreibkorrektur
 set helplang=de             " Deutsche Hilfe
 set spelllang=de_de,en_us   " Deutsche und englische Rechtschreibung
 
