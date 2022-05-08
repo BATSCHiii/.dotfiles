@@ -10,4 +10,4 @@ map("i", "jk", "<Esc>")
 map("v", "<C-c>", "\"+y")
 map("i", "<C-v>", "<Esc>\"+pa")
 map("n", "<C-p>", "<cmd>Telescope find_files<cr>")
- 
+map("n", "<F5>", ":UndotreeToggle<CR>")

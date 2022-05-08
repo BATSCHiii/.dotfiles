@@ -22,6 +22,7 @@ return require("packer").startup(function()
         "hrsh7th/nvim-cmp",
         "neovim/nvim-lspconfig",
 		"nvim-treesitter/nvim-treesitter",
+		"mbbill/undotree",
         "wbthomason/packer.nvim",
     })
 
