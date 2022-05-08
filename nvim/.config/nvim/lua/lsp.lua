@@ -1,11 +1,5 @@
 -- Setup nvim-cmp
 local cmp = require("cmp")
-local source_mapping = {
-	buffer = "[Buffer]",
-	nvim_lsp = "[LSP]",
-	nvim_lua = "[LUA]",
-	path = "[PATH]",
-}
 
 -- completion setup
 cmp.setup({
@@ -21,8 +15,7 @@ cmp.setup({
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
-        ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }), ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
     },
     sources = {
@@ -53,8 +46,7 @@ local m = function(mode, key, result)
 end
 
 -- function to attach completion when setting up lsp
-local on_attach = function(client)
-
+local on_attach = function(client, bufnr)
     -- Mappings.
     m("n", "ga", "lua vim.lsp.buf.code_action()")
     m("n", "gD", "lua vim.lsp.buf.declaration()")
@@ -65,9 +57,17 @@ local on_attach = function(client)
     m("n", "gr", "lua vim.lsp.buf.references()")
     m("n", "K", "lua vim.lsp.buf.hover()")
     -- m("n", "<space>rn", "lua vim.lsp.buf.rename()")
-    m("n", "gl", "lua vim.lsp.diagnostic.show_line_diagnostics()")
+    m("n", "gl", "lua vim.diagnostic.open_float()")
     -- m("n", "<space>f", "lua vim.lsp.buf.formatting()")
 end
 
 
-require('lspconfig').rust_analyzer.setup{}
+require('lspconfig').rust_analyzer.setup {
+	on_attach = on_attach,
+	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+}
+
+require('lspconfig').ccls.setup{
+	on_attach = on_attach,
+}
+
