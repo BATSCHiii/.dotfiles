@@ -23,6 +23,7 @@ return require("packer").startup(function()
         "neovim/nvim-lspconfig",
 		"nvim-treesitter/nvim-treesitter",
 		"mbbill/undotree",
+		"ThePrimeagen/harpoon",
         "wbthomason/packer.nvim",
     })
 
