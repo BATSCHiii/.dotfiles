@@ -22,7 +22,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
-		{ name = "PATH" },
+		{ name = "path" },
     },
 	formatting = {
 		format = function(entry, vim_item)
