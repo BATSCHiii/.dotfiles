@@ -17,3 +17,4 @@ map("n", "<F5>", ":lua require(\"harpoon.ui\").nav_file(1)<CR>")
 map("n", "<F6>", ":lua require(\"harpoon.ui\").nav_file(2)<CR>")
 map("n", "<F7>", ":lua require(\"harpoon.ui\").nav_file(3)<CR>")
 map("n", "<F8>", ":lua require(\"harpoon.ui\").nav_file(4)<CR>")
+

@@ -25,6 +25,7 @@ return require("packer").startup(function()
 		"mbbill/undotree",
 		"ThePrimeagen/harpoon",
         "wbthomason/packer.nvim",
+		"nvim-lua/lsp_extensions.nvim"
     })
 
 	use {

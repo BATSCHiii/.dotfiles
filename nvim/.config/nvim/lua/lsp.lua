@@ -61,13 +61,21 @@ local on_attach = function(client, bufnr)
     -- m("n", "<space>f", "lua vim.lsp.buf.formatting()")
 end
 
+require'lsp_extensions'.inlay_hints {
+	highlight = "Comment",
+	prefix =  " > ",
+	aligned = false,
+	only_current_line = false,
+	enabled = { "TypeHint", 
+			    "ChainingHint",
+				"ParameterHint" }
+}
 
 require('lspconfig').rust_analyzer.setup {
 	on_attach = on_attach,
-	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+--	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
 }
 
 require('lspconfig').ccls.setup{
 	on_attach = on_attach,
 }
-

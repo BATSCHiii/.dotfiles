@@ -7,6 +7,6 @@ xmodmap -e "keycode 17 = 8 bar"
 xmodmap -e "keycode 18 = 9 backslash"
 
 # Umlaut
-xmodmap -e "keycode 34 = parenleft parenright"
-xmodmap -e "keycode 47 = braceleft braceright"
+xmodmap -e "keycode 34 = braceleft braceright"
+xmodmap -e "keycode 47 = parenleft parenright"
 xmodmap -e "keycode 48 = bracketleft bracketright"

@@ -149,7 +149,7 @@ bindsym $mod+r mode "resize"
 
 bar {
 		position top
-		font pango:Nerd Font 15
+		font pango:Cousine Nerd Font Mono Regular 15
 		colors {
 			background #282A36
 		}
