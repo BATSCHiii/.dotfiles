@@ -4,7 +4,6 @@ require("options")
 require("lsp")
 require("telescope_config")
 require("treesitter")
-require("inlay_hints")
 
 vim.cmd("colorscheme gruvbox")
 vim.cmd("highlight Normal guibg=NONE")
