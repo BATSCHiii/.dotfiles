@@ -25,12 +25,12 @@ sudp apt install python3-pip
 pip install psutil
 ```
 Install a [Nerd Font](https://www.nerdfonts.com/font-downloads)
+(Cousine for i3bar)
 ```
 mv ~/.fonts
 unzip <font>
 fc-cache -fv
 ```
-
 
 
 - ### NeoVim
@@ -51,8 +51,6 @@ stow zsh
 ```
 
 
-
-
 # LaTeX
 - Install with
 `sudo apt install texlive texlive-science texlive-pictures`
@@ -69,7 +67,8 @@ stow zsh
 ### Misc
 #### Rust Analyzer
 - `rustup +nightly component add rust-analyzer-preview`
-- `curl -L https://github.com/rust-lang/rust-analyzer/releases/download/2021-06-28/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer`
+- `curl -L https://github.com/rust-lang/rust-analyzer/releases/download/2021-06-28/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/usr/local/bin/rust-analyzer`
+
 
 - ~/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim/lua/lsp_extensions/init.lua rust-analyzer/inlayHints -> textDocument/inlayHint
 
@@ -89,4 +88,4 @@ clang
 -std=c++11
 ```
 
-- If nvim doesn't copy to clipboard: `sudo apt intall xclip`
+- If nvim doesn't copy to clipboard: `sudo apt install xclip`

@@ -14,6 +14,10 @@ end
 return require("packer").startup(function()
 	use 'ellisonleao/gruvbox.nvim'
 
+	use 'folke/tokyonight.nvim'
+
+	use { "catppuccin/nvim", as = "catppuccin" }
+
 	use({
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
@@ -25,8 +29,9 @@ return require("packer").startup(function()
 		"mbbill/undotree",
 		"ThePrimeagen/harpoon",
         "wbthomason/packer.nvim",
-		"nvim-lua/lsp_extensions.nvim"
-    })
+--		"nvim-lua/lsp_extensions.nvim",
+		'simrat39/rust-tools.nvim',
+	})
 
 	use {
 	  'nvim-telescope/telescope.nvim',

@@ -58,18 +58,52 @@ local on_attach = function(client, bufnr)
     m("n", "K", "lua vim.lsp.buf.hover()")
     -- m("n", "<space>rn", "lua vim.lsp.buf.rename()")
     m("n", "gl", "lua vim.diagnostic.open_float()")
-    -- m("n", "<space>f", "lua vim.lsp.buf.formatting()")
+    --m("n", "<space>f", "lua vim.lsp.buf.formatting()")
 end
 
-require'lsp_extensions'.inlay_hints {
-	highlight = "Comment",
-	prefix =  " > ",
-	aligned = false,
-	only_current_line = false,
-	enabled = { "TypeHint", 
-			    "ChainingHint",
-				"ParameterHint" }
-}
+require('rust-tools').setup({
+	server = {
+		on_attach = on_attach,	
+	},
+	tools = { -- rust-tools options
+
+		inlay_hints = {
+		  -- automatically set inlay hints (type hints)
+		  -- default: true
+		  auto = true,
+
+		  -- Only show inlay hints for the current line
+		  only_current_line = false,
+
+		  -- whether to show parameter hints with the inlay hints or not
+		  -- default: true
+		  show_parameter_hints = true,
+
+		  -- prefix for parameter hints
+		  -- default: "<-"
+		  parameter_hints_prefix = "<- ",
+
+		  -- prefix for all the other hints (type, chaining)
+		  -- default: "=>"
+		  other_hints_prefix = "  >> ",
+
+		  -- whether to align to the length of the longest line in the file
+		  max_len_align = false,
+
+		  -- padding from the left if max_len_align is true
+		  max_len_align_padding = 1,
+
+		  -- whether to align to the extreme right or not
+		  right_align = false,
+
+		  -- padding from the right if right_align is true
+		  right_align_padding = 7,
+
+		  -- The color of the hints
+		  highlight = "Comment",
+		},
+	},
+})
 
 require('lspconfig').rust_analyzer.setup {
 	on_attach = on_attach,
