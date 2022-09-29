@@ -15,5 +15,6 @@ ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
+alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin" 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
