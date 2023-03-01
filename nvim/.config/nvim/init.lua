@@ -1,17 +1,9 @@
 require("plugins")
-require("keybinds")
-require("options")
-require("lsp")
+require("remap")
+require("treesitter_config")
 require("telescope_config")
-require("treesitter")
-
-vim.cmd("highlight Normal guibg=NONE")
-vim.cmd("highlight LineNr guifg=#5eacd3")
-vim.cmd("autocmd BufRead,BufNewFile   *.tex setlocal tabstop=2")
-vim.cmd("autocmd BufRead,BufNewFile   *.tex setlocal shiftwidth=2")
-
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
-
-require("catppuccin").setup()
-
-vim.cmd [[colorscheme catppuccin]]
+require("undotree_config")
+require("harpoon_config")
+require("fugitive_config")
+require("colors")
+require("lsp")
