@@ -11,33 +11,15 @@
 - ### Terminal
 `sudo apt install xfce4-terminal`
 
-- ### i3
-`sudo apt install i3`
-xrandr --output Virtual1 --mode 1920x1080
-[Disable Win+L on Windows](https://superuser.com/questions/1059511/how-to-disable-winl-in-windows-10)
-
-#### i3 status bar
-Setup cronjob to get weather (`crontab -e`)
-`*/15 * * * * curl -s "wttr.in/Luebeck?format=3" > ~/.weather.cache`
-Install psutil
-```
-sudp apt install python3-pip
-pip install psutil
-```
-Install a [Nerd Font](https://www.nerdfonts.com/font-downloads)
-(Cousine for i3bar)
-```
-mv ~/.fonts
-unzip <font>
-fc-cache -fv
-```
-
-
 - ### NeoVim
-[Download from](https://github.com/neovim/neovim/releases/)
+Download from [releasepage](https://github.com/neovim/neovim/releases/)
 ```
 tar xvfz nvim-linux64.tar.gz
 sudo mv nvim-linux64 /usr/local/
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 :PackerInstall
 ```
 
@@ -50,6 +32,28 @@ stow nvim
 stow zsh
 ```
 
+- ### i3
+`sudo apt install i3` \
+xrandr --output Virtual1 --mode 1920x1080 \
+[Disable Win+L on Windows](https://superuser.com/questions/1059511/how-to-disable-winl-in-windows-10)
+
+
+#### i3 status bar
+Setup cronjob to get weather (`crontab -e`)
+`*/15 * * * * curl -s "wttr.in/Luebeck?format=3" > ~/.weather.cache`
+Install psutil
+```
+sudp apt install python3-pip
+pip install psutil
+```
+
+Install a [Nerd Font](https://www.nerdfonts.com/font-downloads)
+(Cousine for i3bar)
+```
+mv ~/.fonts
+unzip <font>
+fc-cache -fv
+```
 
 # LaTeX
 - Install with

@@ -54,10 +54,11 @@ weather() {
   echo -n "},"
 }
 
+
 logout() {
   echo -n "{"
   echo -n "\"name\":\"id_logout\","
-  echo -n "\"full_text\":\"\uf842\","
+  echo -n "\"full_text\":\"  \","
   echo -n "\"background\":\"$bg_bar_color\","
   common
   echo -n "}" # <- Last item has no ,
@@ -65,9 +66,9 @@ logout() {
 
 memory() {
   separator "#3949AB" $bg_bar_color
-  echo -n ",{" # <- First item has no ,
+  echo -n ",{" # <- First item has no ,
   echo -n "\"name\":\"id_memory\","
-  echo -n "\"full_text\":\"  $(/home/melf/.dotfiles/i3/.config/i3status/memory.py)%\","
+  echo -n "\"full_text\":\"  $(/home/melf/.dotfiles/i3/.config/i3status/memory.py)%\","
   echo -n "\"background\":\"#3949AB\","
   common
   echo -n "}"
@@ -76,7 +77,8 @@ memory() {
 cpu_usage() {
   echo -n ",{"
   echo -n "\"name\":\"id_cpu_usage\","
-  echo -n "\"full_text\":\"   $(/home/melf/.dotfiles/i3/.config/i3status/cpu.py)% \","
+  #echo -n "\"full_text\":\"   $(/home/melf/.dotfiles/i3/.config/i3status/cpu.py)% \","
+  echo -n "\"full_text\":\"  $(/home/melf/.dotfiles/i3/.config/i3status/cpu.py)% \","
   echo -n "\"background\":\"#3949AB\","
   common
   echo -n "},"
@@ -108,6 +110,6 @@ done) &
 while read line;
 do
   if [[ $line == *"name"*"id_logout"* ]]; then
-    xfce4-terminal i3-nagbar -t warning -m 'Log out ?' -b 'yes' 'i3-msg exit' > /dev/null
-  fi  
+    xfce4-terminal --command="i3-nagbar -t warning -m 'Log out ?' -b 'yes' 'i3-msg exit' > /dev/null"
+  fi
 done
