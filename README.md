@@ -23,7 +23,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 :PackerInstall
 ```
 
-# Install .dotfiles
+### Install .dotfiles
 ```
 cd ~
 git clone git@github.com:BATSCHiii/.dotfiles.git
@@ -55,13 +55,20 @@ unzip <font>
 fc-cache -fv
 ```
 
-# LaTeX
+### Budgie Desktop
+https://itsfoss.com/install-budgie-ubuntu/#install-budgie-on-ubuntu
+```
+sudo apt update && sudo apt upgrade
+sudo apt install ubuntu-budgie-desktop
+```
+
+### LaTeX
 - Install with
 `sudo apt install texlive texlive-science texlive-pictures`
 - Compile with 
 `pdflatex <file>.tex`
 
-### Install packages
+#### Install packages
 - Download package from CTAN and unzip
 - `tex <package>.dtx` or `tex <package>.in`
 - `mv <folder> /usr/share/texlive/texmf-dist/tex/latex`
