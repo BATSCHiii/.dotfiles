@@ -3,7 +3,7 @@
 - ### Zsh
 `sudo apt intall zsh`
 `chsh -s $(which zsh)` no sudo, relog after
-
+https://github.com/junegunn/fzf#installation
 
 - ### [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
