@@ -1,7 +1,7 @@
 # Installations
 
 - ### Zsh
-`sudo apt intall zsh`
+`sudo apt install zsh`
 `chsh -s $(which zsh)` no sudo, relog after
 https://github.com/junegunn/fzf#installation
 
@@ -41,9 +41,10 @@ xrandr --output Virtual1 --mode 1920x1080 \
 #### i3 status bar
 Setup cronjob to get weather (`crontab -e`)
 `*/15 * * * * curl -s "wttr.in/Luebeck?format=3" > ~/.weather.cache`
+
 Install psutil
 ```
-sudp apt install python3-pip
+sudo apt install python3-pip
 pip install psutil
 ```
 
@@ -54,6 +55,8 @@ mv ~/.fonts
 unzip <font>
 fc-cache -fv
 ```
+
+Fix username in `~/.config/i3/config` and `~/.config/i3status/mybar.sh` if changed
 
 ### Budgie Desktop
 https://itsfoss.com/install-budgie-ubuntu/#install-budgie-on-ubuntu

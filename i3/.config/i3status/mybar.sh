@@ -48,7 +48,7 @@ weather() {
   separator $bg "#3949AB"
   echo -n ",{"
   echo -n "\"name\":\"id_weather\","
-  echo -n "\"full_text\":\" $(/home/melf/.dotfiles/i3/.config/i3status/weather.sh) \","
+  echo -n "\"full_text\":\" $(/home/user/.dotfiles/i3/.config/i3status/weather.sh) \","
   echo -n "\"background\":\"$bg\","
   common
   echo -n "},"
@@ -64,21 +64,32 @@ logout() {
   echo -n "}" # <- Last item has no ,
 }
 
+
 memory() {
-  separator "#3949AB" $bg_bar_color
   echo -n ",{" # <- First item has no ,
   echo -n "\"name\":\"id_memory\","
-  echo -n "\"full_text\":\"  $(/home/melf/.dotfiles/i3/.config/i3status/memory.py)%\","
+  echo -n "\"full_text\":\"  $(/home/user/.dotfiles/i3/.config/i3status/memory.py)\","
   echo -n "\"background\":\"#3949AB\","
   common
   echo -n "}"
 }
 
+battery() {
+  separator "#3949AB" $bg_bar_color
+  echo -n ",{" # <- First item has no ,
+  echo -n "\"name\":\"id_battery\","
+  echo -n "\"full_text\":\"   $(/home/user/.dotfiles/i3/.config/i3status/battery.py)\","
+  echo -n "\"background\":\"#3949AB\","
+  common
+  echo -n "}"
+}
+
+
 cpu_usage() {
   echo -n ",{"
   echo -n "\"name\":\"id_cpu_usage\","
   #echo -n "\"full_text\":\"   $(/home/melf/.dotfiles/i3/.config/i3status/cpu.py)% \","
-  echo -n "\"full_text\":\"  $(/home/melf/.dotfiles/i3/.config/i3status/cpu.py)% \","
+  echo -n "\"full_text\":\"  $(/home/user/.dotfiles/i3/.config/i3status/cpu.py) \","
   echo -n "\"background\":\"#3949AB\","
   common
   echo -n "},"
@@ -97,6 +108,7 @@ echo '[]'
 (while :;
 do
 	echo -n ",["
+    battery
 	memory
 	cpu_usage
 	weather

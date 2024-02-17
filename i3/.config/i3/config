@@ -153,7 +153,7 @@ bar {
 		colors {
 			background #282A36
 		}
-        status_command exec /home/melf/.dotfiles/i3/.config/i3status/mybar.sh
+        status_command exec /home/user/.dotfiles/i3/.config/i3status/mybar.sh
 }
 
 # Start in workspace 10

@@ -2,4 +2,4 @@
 
 import psutil
 
-print(psutil.virtual_memory()[2], end='')
+print(psutil.virtual_memory()[2], "%", end='')
