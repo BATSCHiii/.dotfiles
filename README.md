@@ -8,6 +8,20 @@ https://github.com/junegunn/fzf#installation
 - ### [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
+
+
+Zsh comes with colored prompts builtin. Try
+
+autoload -U promptinit && promptinit
+
+and then prompt -l lists available prompts, -p fire previews the "fire" prompt, -s fire sets it.
+
+When you are ready to add a prompt add something like this below the autoload line above:
+
+prompt fade red
+
+
+
 - ### Terminal
 `sudo apt install xfce4-terminal`
 
